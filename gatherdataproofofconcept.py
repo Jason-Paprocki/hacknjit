@@ -11,6 +11,6 @@ def getRequest(gmap, origin, destination):
 def jsonify(request_info):
     with open('json_dump.json', 'w') as ofile:
         json.dump(request_info, ofile)
-jsonify(getRequest(gmap, '42 wilsey street, newark, nj', '25 hamilton ave, berkeley heights, nj'))
-#test print(getRequest(gmap, '42 wilsey street, newark, nj', '25 hamilton ave, berkeley heights, nj'))
+jsonify(getRequest(gmap, '42 wilsey street, newark, nj', 'test_address'))
+#test print(getRequest(gmap, '42 wilsey street, newark, nj', 'test_address'))
 
