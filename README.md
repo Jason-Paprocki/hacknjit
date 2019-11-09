@@ -1,3 +1,4 @@
 # hacknjit
 Gas station
-lmaoooooo
+lmaooo
+ricky's test commit
