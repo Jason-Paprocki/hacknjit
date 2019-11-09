@@ -1,0 +1,7 @@
+Text twilio "gas", "starting location", "ending location" and receive directions to the cheapest place to get gas
+along the route to the ending location
+
+Gather:
+1) Geologation of nearby gas (google maps)
+2) Price (????)
+3) New route's extra time
