@@ -18,8 +18,3 @@ def sms_ahoy_reply():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
-
-
-#twilio phone-numbers:update "+12512559502" --sms-url="http://localhost:5000/sms"
