@@ -1,7 +1,5 @@
-#from flask import jsonify
 import googlemaps
 import json
-from datetime import datetime
 
 gmap = googlemaps.Client(key='AIzaSyB3O7rrXNzMCbD1dK3Kmme_yCx3PruCVwk')
 
