@@ -1,3 +1,4 @@
+import json
 from flask import Flask, request, redirect
 from twilio.twiml.messaging_response import MessagingResponse
 
@@ -12,11 +13,13 @@ def incoming_sms():
     # Start our TwiML response
     resp = MessagingResponse()
 
-    # Determine the right reply for this message
-    if body == 'hello':
-        resp.message("Hi!")
-    elif body == 'bye':
-        resp.message("Goodbye")
+    # writing JSON object
+    with open('data.json', 'w') as f:
+        json.dump(resp, f)
+
+
+    #reply for this message
+    resp.message("hello")
 
     return str(resp)
 
