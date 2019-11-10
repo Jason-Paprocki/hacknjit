@@ -32,7 +32,7 @@ def incoming_sms():
 
     body_elements = body.split(' ')
     print(body_elements)
-"""
+    """
     if (body[0] == "go"):
         direction = "go"
         messagebody = body[1]
