@@ -4,6 +4,7 @@ import googlemaps
 from route_data_parser import parse_json_for_turns
 import MapPoint
 from webscrape_gas_prices import get_station_at_address
+from pprint import pprint
 
 key = "AIzaSyB3O7rrXNzMCbD1dK3Kmme_yCx3PruCVwk"
 gmap = googlemaps.Client(key='AIzaSyB3O7rrXNzMCbD1dK3Kmme_yCx3PruCVwk')
@@ -68,6 +69,7 @@ def main(origin, destination):
     gas_stations = []
     for midpoint in midpoint_list:
         address = midpoint.reverse_geocode()
+        print(address)
         gas_stations.append(get_station_at_address(address))
 
     #gather final google maps url of pointA->gas_stations[0]->pointB

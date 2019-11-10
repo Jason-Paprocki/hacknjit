@@ -4,10 +4,15 @@ from bs4 import BeautifulSoup
 import requests
 import re
 from GasStation import GasStation
+from lxml import etree
+
 '''
 //*[@id="search"]
 //*[@id="container"]/div/div/div[2]/div/div[1]/div[3]/div/div/div/div/form/div/div[1]/div[1]/input
 //*[@id="container"]/div/div/div[2]/div/div[1]/div[3]/div/div/div/div/form/div/div[1]/div[1]/input
+Address = /html/body/div[1]/div/div[3]/div/div/div[1]/div[3]/div[1]/div/div[2]/div[2]
+Price = /html/body/div[1]/div/div[3]/div/div/div[1]/div[3]/div[1]/div/div[4]/div/span
+
 '''
 '''
 def get_price_at_address(address):
@@ -46,19 +51,22 @@ def get_station_at_address(address):
     payload = {'search' : format_address(address),
                'fuel' : '1'}
 
-    print(url + '?search=' + payload['search'] + 'fuel=' + payload['fuel'])
 
     response = requests.get(url, params=payload, headers=headers, data="ON")
 
     #parse and prepare data
     html = response.text
-    print(html)
     soup = BeautifulSoup(html, features='lxml')
 
     #build GasStation object to hold address and price
 
-    div_list = soup.find_all('div')
-    print(div_list)
+    dom = etree.HTML(html)
+    price_text = dom.xpath("/html/body/div[1]/div/div[3]/div/div/div[1]/div[3]/div[1]/div/div[4]/div/span/text()")
+    address_text = dom.xpath("/html/body/div[1]/div/div[3]/div/div/div[1]/div[3]/div[1]/div/div[2]/div[2]/text()")
+    print(price_text)
+    print(address_text)
+
+
     '''
     gs_addr_cont_regex = re.compile("^(GenericStationListItem__address)")
     gs_address = soup.find_all('div')
@@ -67,4 +75,4 @@ def get_station_at_address(address):
     gs_price = soup.find(gs_price_cont_regex).span
     print("Station Price:", gs_price)
     '''
-    return GasStation(gs_address, gs_price)
+    return GasStation(address_text, price_text)
