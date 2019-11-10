@@ -11,7 +11,9 @@ client = Client(account_sid, auth_token)
 f = open('mycsv.csv')
 csv_r = csv.reader(f)
 rows = list(csv_r)
-writer = csv.writer(f)
+
+w = open('mycsv..csv', 'w')
+writer = csv.writer(w)
 
 app = Flask(__name__)
 @app.route("/sms", methods=['GET', 'POST'])
