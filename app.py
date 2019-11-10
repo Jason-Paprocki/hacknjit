@@ -8,12 +8,12 @@ auth_token = '00b0091d18423f8ac406fd4c8d83e861'
 client = Client(account_sid, auth_token)
 
 
-f = open('mycsv.csv')
+f = open('mycsv.csv', 'w')
 csv_r = csv.reader(f)
 rows = list(csv_r)
 
-w = open('mycsv.csv', 'w')
-writer = csv.writer(w)
+//w = open('mycsv.csv', 'w')
+writer = csv.writer(f)
 
 app = Flask(__name__)
 @app.route("/sms", methods=['GET', 'POST'])
