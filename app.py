@@ -12,7 +12,7 @@ f = open('mycsv.csv', 'w')
 csv_r = csv.reader(f)
 rows = list(csv_r)
 
-//w = open('mycsv.csv', 'w')
+#w = open('mycsv.csv', 'w')
 writer = csv.writer(f)
 
 app = Flask(__name__)
