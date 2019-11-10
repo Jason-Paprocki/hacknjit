@@ -23,11 +23,23 @@ def sort_by_price(gs_list):
     # Traverse through all array elements
     for i in range(len(gs_list)):
         # Last i elements are already in place
-        for j in range(0, n-i-1):
+        for j in range(0, (len(gs_list))-i-1):
             # traverse the array from 0 to n-i-1
             # Swap if the element found is greater
             # than the next element
-            if gs_list[j].price > gs_list[j+1].price :
+            j_price = gs_list.price[j][0]
+            i_price = gs_list.price[j+1][0]
+            if j_price != '---':
+                j_price = float(j_price)
+            else:
+                j_price = 0.0
+
+            if i_price != '---':
+                i_price = float(i_price)
+            else:
+                i_price = 0.0
+
+            if j_price > i_price :
                 gs_list[j], gs_list[j+1] = gs_list[j+1], gs_list[j]
 
 
