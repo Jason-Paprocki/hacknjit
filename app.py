@@ -23,7 +23,7 @@ def incoming_sms():
 
     # Determine the right reply for this message
     if 'Start' in body or 'start' in body:
-        resp.message(str(startInMessage(body, phone_number)))
+        resp.message(str(isInFile()))
     elif 'end' in body or 'End' in body:
         resp.message(endInMessage())
 
