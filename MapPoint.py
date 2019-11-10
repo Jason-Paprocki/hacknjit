@@ -1,6 +1,8 @@
+import googlemaps
+
 class MapPoint:
     #constructor for turn MapPoints
-    def __init__(self, lat=0.0, lng=0.0, dist_to_next=0.0):
+    def __init__(self, lat, lng, dist_to_next=-1.0, address=""):
         self.lat = lat
         self.lng = lng
         self.dist_to_next = dist_to_next
@@ -8,15 +10,14 @@ class MapPoint:
         self.lng_str = format(lng, '.15f')
         self.dist_to_next_str = format(float(dist_to_next), '.4f')
 
-    #constructor for pointA and pointB
-    def __init__(self, lat=0.0, lng=0.0):
-        self.lat = lat
-        self.lng = lng
-        self.lat_str = format(lat, '.15f')
-        self.lng_str = format(lng, '.15f')
+        #some address was specified at instantiation
+        if address != "":
+            self.address = address
+        else: #build address from lat, lng
+            self.address = self.reverse_geocode()
 
     #construct MapPoint given a literal address
-    def __init__(address):
+    def geocode(address):
         url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json"
         payload = {"key" : key,
                    "input" : address,

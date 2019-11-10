@@ -8,8 +8,8 @@ from MapPoint import MapPoint
 #   list[1] = A list of MapPoint objects corresponding to a turn on the route
 def parse_json_for_turns(json_data):
     #load and prepare json_data
-    parsed_json = json.load(json_data)
-    steps_list = parsed_json[0]['legs'][0]['steps']
+    parsed_json = json_data
+    steps_list = parsed_json['legs'][0]['steps']
     turning_points = []
 
     #iterate over steps_list and add each step as a MapPoint
@@ -22,15 +22,15 @@ def parse_json_for_turns(json_data):
         s_point = MapPoint(s_lat, s_lng, true_dist_in_miles)
         turning_points.append(s_point)
 
-        #grab pointA and pointB
-        pointA_lat = parsed_json[0]['legs'][0]['start_location']['lat']
-        pointA_lng = parsed_json[0]['legs'][0]['start_location']['lng']
-        pointB_lat = parsed_json[0]['legs'][0]['end_location']['lat']
-        pointB_lng = parsed_json[0]['legs'][0]['end_location']['lng']
-        pointA = MapPoint(pointA_lat, pointA_lng)
-        pointB = MapPoint(pointB_lat, pointB_lng)
+    #grab pointA and pointB
+    pointA_lat = parsed_json['legs'][0]['start_location']['lat']
+    pointA_lng = parsed_json['legs'][0]['start_location']['lng']
+    pointB_lat = parsed_json['legs'][0]['end_location']['lat']
+    pointB_lng = parsed_json['legs'][0]['end_location']['lng']
+    pointA = MapPoint(pointA_lat, pointA_lng)
+    pointB = MapPoint(pointB_lat, pointB_lng)
 
-        return [(pointA, pointB), turning_points]
+    return [(pointA, pointB), turning_points]
 
 
 def parseDistanceToMiles(dist_string):

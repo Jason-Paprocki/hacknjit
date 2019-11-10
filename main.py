@@ -1,9 +1,9 @@
 import json
 import requests
 import googlemaps
-import route_data_parser
+from route_data_parser import parse_json_for_turns
 import MapPoint
-import webscrape_gas_prices
+from webscrape_gas_prices import get_station_at_address
 
 key = "AIzaSyB3O7rrXNzMCbD1dK3Kmme_yCx3PruCVwk"
 gmap = googlemaps.Client(key='AIzaSyB3O7rrXNzMCbD1dK3Kmme_yCx3PruCVwk')
@@ -16,8 +16,7 @@ def get_route(gmap, origin, destination):
     return result
 
 def jsonify(request_info):
-    with open('json_dump.json', 'w') as ofile:
-        json.dump(request_info, ofile)
+    return json.dump(request_info)
 
 #Sorts Gas Station objects by their price
 def sort_by_price(gs_list):
@@ -51,7 +50,7 @@ def generate_final_route(pointA, pointB, gs):
 
 def main(origin, destination):
     #generate a json file to grab turn data from route of origin->destination
-    route_AtoB_json = get_route(gmap, origin, destination)
+    route_AtoB_json = get_route(gmap, origin, destination)[0]
     parsed_json = parse_json_for_turns(route_AtoB_json)
 
     pointA = parsed_json[0][0]
@@ -68,7 +67,7 @@ def main(origin, destination):
     #determine best gas stations in proximity to to each midpoint
     gas_stations = []
     for midpoint in midpoint_list:
-        address = midpoint.to_address()
+        address = midpoint.reverse_geocode()
         gas_stations.append(get_station_at_address(address))
 
     #gather final google maps url of pointA->gas_stations[0]->pointB
@@ -79,5 +78,3 @@ def main(origin, destination):
 
 if __name__ == '__main__':
     main(origin, destination)
-
-jsonify(get_route(gmap, '42 wilsey street, newark, nj', 'test_address'))
