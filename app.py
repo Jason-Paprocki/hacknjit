@@ -1,5 +1,6 @@
 from flask import Flask, request, redirect
 from twilio.twiml.messaging_response import MessagingResponse
+import csv
 
 app = Flask(__name__)
 @app.route("/sms", methods=['GET', 'POST'])
@@ -13,19 +14,21 @@ def incoming_sms():
     resp = MessagingResponse()
 
     # Determine the right reply for this message
-    if body == 'hello':
-        resp.message(testing())
-    elif body == 'bye':
-        resp.message("Goodbye")
+    if 'start' in body:
+        resp.message(startInMessage())
+    elif 'end' in body:
+        resp.message(endInMessage())
 
     return str(resp)
 
 
 
 
-def testing():
+def startInMessage():
     return "testing works"
 
+def endInMessage():
+    return "yert"
 
 
 
