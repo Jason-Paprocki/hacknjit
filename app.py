@@ -27,8 +27,10 @@ def incoming_sms():
     count = 0
 
     messages = client.messages.list()
-
-    resp.message(messages)
+    
+    for record in messages:
+        print(record.sid)
+    #resp.message()
 
     #body_elements = body.split(' ')
     # Determine the right reply for this message
