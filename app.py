@@ -21,8 +21,16 @@ def incoming_sms():
 
     phone_number = request.form["From"]
 
+    count = 0
+
+    while count < 3:
+        print("received")
+
+    resp.message(phone_number + " complete")
+
     #body_elements = body.split(' ')
     # Determine the right reply for this message
+    '''
     if 'from' in body or 'From' in body:
         writeToCsv(phone_number)
         resp.message(str(isInFile(phone_number)))
@@ -30,11 +38,11 @@ def incoming_sms():
         resp.message(str(writeToCsv(phone_number)))
 
 
-
+    '''
     return str(resp)
-
+    
 #handling requests from the user
-
+'''
 def isInFile(phone_number):
     with open('mycsv.csv', 'r') as readFile:
         reader = csv.reader(readFile)
@@ -79,6 +87,7 @@ def endInMessage(body):
 
 
     return False
+'''
 
 if __name__ == "__main__":
     app.run(debug=True)
