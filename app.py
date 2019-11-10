@@ -21,11 +21,12 @@ def incoming_sms():
 
     phone_number = request.form["From"]
 
+    #body_elements = body.split(' ')
     # Determine the right reply for this message
-    if 'Start' in body or 'start' in body:
+    if 'from' in body or 'From' in body:
         writeToCsv()
         resp.message(str(isInFile(phone_number)))
-    elif 'end' in body or 'End' in body:
+    elif 'To' in body or 'to' in body:
         resp.message(str(writeToCsv(phone_number)))
 
 
