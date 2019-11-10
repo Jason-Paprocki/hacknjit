@@ -7,7 +7,7 @@ account_sid = 'AC1f8226cae497269ca7a9680131a2d2af'
 auth_token = '00b0091d18423f8ac406fd4c8d83e861'
 client = Client(account_sid, auth_token)
 
-with open('mycsv.csv', 'w')as r:
+with open('mycsv.csv', 'r')as r:
     csv_r = csv.reader(r)
     with open('mycsv.csv', 'w') as w:
         csv_w=csv.writer(w)
