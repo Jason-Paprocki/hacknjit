@@ -4,6 +4,7 @@ import googlemaps
 import FindCloseGasStation
 from route_data_parser import parse_json_for_turns
 import MapPoint
+import app
 from webscrape_gas_prices import get_station_at_address
 
 key = "AIzaSyB3O7rrXNzMCbD1dK3Kmme_yCx3PruCVwk"
@@ -27,7 +28,7 @@ def sort_by_price(gs_list):
         for i in range(1, len(gs_list)):
             current = gs_list[i]
 
-            while i > 0 and gs_list[i-1] > current:
+            while i > 0 and gs_list[i-1].price > current.price:
                 gs_list[i] = my_list[i-1]
                 i -= 1
 
@@ -58,24 +59,23 @@ def main(origin, destination):
     pointB = parsed_json[0][1]
     turns_list = parsed_json[1]
 
-    #calculate the midpoint of all consecutive turns and list them
-    midpoint_list = []
-    for i in range(len(turns_list)):
-        if i+1 < len(turns_list):
-            midpoint = turns_list[i].eucl_midpoint_between(turns_list[i+1])
-            midpoint_list.append(midpoint)
-
-    #determine best gas stations in proximity to to each midpoint
-    gas_stations = []
-    for midpoint in midpoint_list:
-        address = midpoint.reverse_geocode()
-        gas_stations.append(get_station_at_address(address))
+    #insert start and end coordinates
+    turns_list.insert(0, pointA)
+    turns_list.append(pointB)
+    gas_station_addresses = findNearByGas(turns_list)
+   
+    #create a list of gas station objects
+    gasStations = []
+    for gas_station_address in gas_station_addresses:
+        gasStations.append(get_station_at(gas_station_address))
 
     #gather final google maps url of pointA->gas_stations[0]->pointB
-    gas_stations = sort_by_price(gas_stations)
+    gas_station_addresses = sort_by_price(gas_station_addresses)
     route_url = generate_final_routes(pointA, pointB, gas_stations[0])
 
+    # send route url back to requester UNIMPLEMENTED WAITING FOR JASON
     print(route_url)
 
 if __name__ == '__main__':
+    # requires implemented app
     main(origin, destination)
