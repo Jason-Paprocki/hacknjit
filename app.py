@@ -48,6 +48,7 @@ def incoming_sms():
     #reply to message
     #resp.message()
 
+    return str(resp.message())
     #return str(resp.message(main(origin, destination)))
 
 def proccessTask(phone_number, direction, messagebody):
