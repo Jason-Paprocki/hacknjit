@@ -1,5 +1,5 @@
 import requests
-impot googlemaps
+import googlemaps
 import json
 from collections import Counter
 
