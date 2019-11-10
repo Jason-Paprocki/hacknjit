@@ -49,7 +49,7 @@ def incoming_sms():
 def findPhoneNumber():
     with open('mycsv.csv') as csv_file:
         csv_reader = csv.reader('mycsv.csv')
-        list = list(csv_reader)
+        csv_list = list(csv_reader)
         print(list)
 
 if __name__ == "__main__":
