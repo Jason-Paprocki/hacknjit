@@ -77,7 +77,7 @@ def proccessTask(phone_number, direction, messagebody):
                 else:
                     with open('mycsv.csv', 'w') as writeFile:
                         print(index)
-                        
+                        print(lines[index])
                         lines[index] = [lines[index][0], lines[index][1], str(messagebody)]
                         writer = csv.writer(writeFile)
                         writer.writerow(lines)
