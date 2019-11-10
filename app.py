@@ -43,7 +43,7 @@ def incoming_sms():
         messagebody = body[1]
         findPhoneNumber(phone_number, direction, messagebody)
     else:
-        #resp.message("This is an incorrect syntax")
+        resp.message("This is an incorrect syntax")
 
     #reply to message
     #resp.message()
