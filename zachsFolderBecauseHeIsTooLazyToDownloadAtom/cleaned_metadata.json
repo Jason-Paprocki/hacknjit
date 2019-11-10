@@ -1,0 +1,526 @@
+[
+    {
+        "bounds": {
+            "northeast": {
+                "lat": 40.75798109999999,
+                "lng": -74.1802347
+            },
+            "southwest": {
+                "lat": 40.6622718,
+                "lng": -74.4491348
+            }
+        },
+        "copyrights": "Map data \u00a92019 Google",
+        "legs": [
+            {
+                "distance": {
+                    "text": "18.9 mi",
+                    "value": 30474
+                },
+                "duration": {
+                    "text": "26 mins",
+                    "value": 1534
+                },
+                "end_address": "25 Hamilton Ave, Berkeley Heights, NJ 07922, USA",
+                "end_location": {
+                    "lat": 40.6738885,
+                    "lng": -74.4491348
+                },
+                "start_address": "42 Wilsey St, Newark, NJ 07103, USA",
+                "start_location": {
+                    "lat": 40.74306600000001,
+                    "lng": -74.1825044
+                },
+                "steps": [
+                    {
+                        "distance": {
+                            "text": "322 ft",
+                            "value": 98
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 23
+                        },
+                        "end_location": {
+                            "lat": 40.7438912,
+                            "lng": -74.1820989
+                        },
+                        "html_instructions": "Head <b>north</b> on <b>Wilsey St</b> toward <b>New St</b>",
+                        "polyline": {
+                            "points": "estwFrwwcMcDoA"
+                        },
+                        "start_location": {
+                            "lat": 40.74306600000001,
+                            "lng": -74.1825044
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "256 ft",
+                            "value": 78
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 15
+                        },
+                        "end_location": {
+                            "lat": 40.74416009999999,
+                            "lng": -74.1829544
+                        },
+                        "html_instructions": "Turn <b>left</b> at the 1st cross street onto <b>New St</b>",
+                        "maneuver": "turn-left",
+                        "polyline": {
+                            "points": "ixtwFbuwcMu@hD"
+                        },
+                        "start_location": {
+                            "lat": 40.7438912,
+                            "lng": -74.1820989
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.3 mi",
+                            "value": 546
+                        },
+                        "duration": {
+                            "text": "2 mins",
+                            "value": 92
+                        },
+                        "end_location": {
+                            "lat": 40.7486103,
+                            "lng": -74.1802347
+                        },
+                        "html_instructions": "Turn <b>right</b> at the 1st cross street onto <b>Newark St</b>",
+                        "maneuver": "turn-right",
+                        "polyline": {
+                            "points": "_ztwFlzwcMyAi@UKcA_@CASK[OMGQKsHmEaEyB{BoA"
+                        },
+                        "start_location": {
+                            "lat": 40.74416009999999,
+                            "lng": -74.1829544
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "259 ft",
+                            "value": 79
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 25
+                        },
+                        "end_location": {
+                            "lat": 40.7489922,
+                            "lng": -74.18102
+                        },
+                        "html_instructions": "Turn <b>left</b> onto <b>Orange St</b>",
+                        "maneuver": "turn-left",
+                        "polyline": {
+                            "points": "yuuwFliwcMg@tAc@fA"
+                        },
+                        "start_location": {
+                            "lat": 40.7486103,
+                            "lng": -74.1802347
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "404 ft",
+                            "value": 123
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 42
+                        },
+                        "end_location": {
+                            "lat": 40.7500062,
+                            "lng": -74.1804239
+                        },
+                        "html_instructions": "Turn <b>right</b> onto <b>Clifton Ave</b>",
+                        "maneuver": "turn-right",
+                        "polyline": {
+                            "points": "exuwFjnwcMkAm@GCKGIEMG[MKGCAECGC?AA?A?ECOI"
+                        },
+                        "start_location": {
+                            "lat": 40.7489922,
+                            "lng": -74.18102
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.2 mi",
+                            "value": 330
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 36
+                        },
+                        "end_location": {
+                            "lat": 40.7510564,
+                            "lng": -74.1840807
+                        },
+                        "html_instructions": "Turn <b>left</b> onto the <b>Interstate 280 W</b> ramp to <b>Garden State Parkway</b>",
+                        "maneuver": "ramp-left",
+                        "polyline": {
+                            "points": "q~uwFrjwcMEVy@dEENUfAYvAMj@GVERMj@Kj@Mj@Ib@G^AFCd@"
+                        },
+                        "start_location": {
+                            "lat": 40.7500062,
+                            "lng": -74.1804239
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.9 mi",
+                            "value": 1437
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 63
+                        },
+                        "end_location": {
+                            "lat": 40.7557485,
+                            "lng": -74.1996664
+                        },
+                        "html_instructions": "Merge onto <b>I-280 W</b>",
+                        "maneuver": "merge",
+                        "polyline": {
+                            "points": "cevwFnaxcMG\\ERAJG`@CJMxAIjAAPCt@AD?@?B?@?DEp@G|@C\\ALKz@Mr@Ib@Op@Ql@?BQj@Wz@_@pAEROh@CFOl@I`@Kh@Mv@Ed@Il@CRGfACn@AtB[hF?@G~@EZEb@Iv@?@GZCLI^Q~@Ux@Wz@g@pACDO`@Qb@]z@O\\k@rAEJELMXEJa@`AGL{@rBiAnCSf@GJu@hB"
+                        },
+                        "start_location": {
+                            "lat": 40.7510564,
+                            "lng": -74.1840807
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.2 mi",
+                            "value": 341
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 15
+                        },
+                        "end_location": {
+                            "lat": 40.7575213,
+                            "lng": -74.202945
+                        },
+                        "html_instructions": "Take exit <b>12A-12B</b> for <b>Garden State Parkway</b> toward <b>Clinton St</b>/<wbr/><b>E Orange</b>",
+                        "maneuver": "ramp-right",
+                        "polyline": {
+                            "points": "mbwwF|b{cM]XABq@zAIRUd@]x@KRGLIRUf@e@fACHSf@q@fBm@~A"
+                        },
+                        "start_location": {
+                            "lat": 40.7557485,
+                            "lng": -74.1996664
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.3 mi",
+                            "value": 493
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 36
+                        },
+                        "end_location": {
+                            "lat": 40.7555272,
+                            "lng": -74.2066543
+                        },
+                        "html_instructions": "Keep <b>left</b> to continue on <b>Exit 12B</b>, follow signs for <b>Oraton Parkway</b><div style=\"font-size:0.9em\">Toll road</div>",
+                        "maneuver": "keep-left",
+                        "polyline": {
+                            "points": "omwwFjw{cMI\\?BO`@Wx@CJMj@ADId@ADCRCRAR?L?L@H@L@HBH@D@J@DBDBHBF@?FLLP@@LHHFHB@@FBLBpA\\n@PRFB@BDv@TLDf@PPH@?DDFBRRTZDFHPHVFb@"
+                        },
+                        "start_location": {
+                            "lat": 40.7575213,
+                            "lng": -74.202945
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "3.8 mi",
+                            "value": 6099
+                        },
+                        "duration": {
+                            "text": "5 mins",
+                            "value": 272
+                        },
+                        "end_location": {
+                            "lat": 40.71241759999999,
+                            "lng": -74.243895
+                        },
+                        "html_instructions": "Keep <b>left</b> at the fork, follow signs for <b>Garden State Parkway S</b> and merge onto <b>Garden State Pkwy</b><div style=\"font-size:0.9em\">Toll road</div>",
+                        "maneuver": "fork-left",
+                        "polyline": {
+                            "points": "aawwFpn|cM?`BMbAQ|@Op@K`@c@hBEXKj@ER?LA@A^@N?HDd@@L@@?@@H@DBFBH@DFH@DB@FHBDDBVDRFn@R`@HTFVFr@P@?b@J`@HjCj@VFJ@TDLA`@NLDRHDBZHfCx@`@N`@LdAZ`@NB@bBb@PFn@Nd@Jp@P`BZHBl@HD@@?`@Hn@JjBZlBZtATPB\\Fp@LF@L@hBZbANbAPf@JZHn@N|@R`AV^Lf@PB@p@TLDd@NhA`@f@V^PZLdAf@`Af@fCrAhAp@b@V`Ab@d@VtAt@XPRJnAp@bEbClC|A|A~@n@`@FBn@`@B@NJb@Vr@b@NHt@b@t@d@`@T`@Vd@VXR~@h@LHpCbBr@`@HFf@Xv@d@x@d@hBhAz@h@tA|@HFlAz@hBxARPf@`@PP@??@p@l@VT|@z@d@d@^`@r@r@`@b@fAfAhAjA\\\\^^X\\NR@@PRhDtDTVTVPRn@x@n@x@\\`@r@~@JN@@?@jA|AtAdBf@j@HHFFJLJL`@b@d@b@NNXVZXXTVRVTLJTRRNRRb@\\pAdAXTHFHFt@l@JHFFr@l@RRPP`@d@LRPRj@|@f@|@HN\\v@^bAJXJXPp@?@Rr@XlAPv@VhAFXDPR|@r@bDLl@H\\HXH\\L^N^JVL^Xl@Zn@`@t@T^d@p@BD~@hAj@j@RPb@^v@l@nBzAB@hBvANJjAz@n@b@p@f@d@Xz@f@jDdB"
+                        },
+                        "start_location": {
+                            "lat": 40.7555272,
+                            "lng": -74.2066543
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.7 mi",
+                            "value": 1175
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 57
+                        },
+                        "end_location": {
+                            "lat": 40.7073651,
+                            "lng": -74.2546989
+                        },
+                        "html_instructions": "Take exit <b>142B</b> for <b>Interstate 78 W</b> toward <b>Springfield</b>",
+                        "maneuver": "ramp-right",
+                        "polyline": {
+                            "points": "ssnwFhwcdMBZ@@@BBBDD\\Ph@XTPXRTT^^XZ@@\\ZZ^l@h@h@v@HPFHDHJPRb@Tl@FPFPJd@H\\F\\NdAp@hELp@Pz@BJBBBJT|@Z`ARh@JPR^LVTTJNd@b@fAj@`@Rt@\\HDd@f@^l@Vl@@FLd@D`@@P@D?V?^A^CXCZE^CJU~BYnC"
+                        },
+                        "start_location": {
+                            "lat": 40.71241759999999,
+                            "lng": -74.243895
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "3.5 mi",
+                            "value": 5676
+                        },
+                        "duration": {
+                            "text": "3 mins",
+                            "value": 207
+                        },
+                        "end_location": {
+                            "lat": 40.7125953,
+                            "lng": -74.31986429999999
+                        },
+                        "html_instructions": "Merge onto <b>I-78 W</b>",
+                        "maneuver": "merge",
+                        "polyline": {
+                            "points": "atmwFzzedMI`@K`@?@ADYzAe@bCWjAUlA_AfESt@g@rB_@|AITGVM`@K`@[lA}@|C]pAENiBpG_B|FOj@qArE_AfD_AjDEP_@xAm@fCWhAUfA[vAOt@UnAEZ[hBA?Ij@UxAETEVIl@SxA?@Ij@Kz@E^[vCMlAEd@Gv@Gl@?@M`BOhBMrBQdD[bHKpCExAKvDGpCEzCEtCMjIQ|KS`OEpBEjDKlDGlBIdBUtEEz@QjEGvB?j@?V?|@@J?RDr@B`@Dp@Dh@Df@NxATrBR|Al@bF\\~CZ~CJz@PrBRdCXbENbCV|EHtBFjBPdFN`EN~EHfCBr@Bn@LzDBhAF`BNlEHhC@t@FbBB|@Fx@z@dR"
+                        },
+                        "start_location": {
+                            "lat": 40.7073651,
+                            "lng": -74.2546989
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.2 mi",
+                            "value": 247
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 9
+                        },
+                        "end_location": {
+                            "lat": 40.7120815,
+                            "lng": -74.32269889999999
+                        },
+                        "html_instructions": "Keep <b>left</b>",
+                        "maneuver": "keep-left",
+                        "polyline": {
+                            "points": "wtnwFbrrdMb@lFPnBPvBFh@@N@D@D@B@BLR"
+                        },
+                        "start_location": {
+                            "lat": 40.7125953,
+                            "lng": -74.31986429999999
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "6.9 mi",
+                            "value": 11033
+                        },
+                        "duration": {
+                            "text": "6 mins",
+                            "value": 368
+                        },
+                        "end_location": {
+                            "lat": 40.6622718,
+                            "lng": -74.4318605
+                        },
+                        "html_instructions": "Merge onto <b>I-78 W</b>",
+                        "maneuver": "merge",
+                        "polyline": {
+                            "points": "oqnwFzcsdMJ|ANbC?BL`Bl@vGHp@XpCLdAJ`ANrABNVvBJl@@PFZRvATxA^tB^tBf@pBBJh@fC~@vDd@fBx@tCTx@FRh@bBr@tBXz@r@pBl@|A`A`Cn@vAXn@^v@^v@r@xArAdC~AxCdAnBh@`Ap@nADHv@tAx@|ATb@PX~AzCLTnAdClAjCb@dAx@xBh@~AL\\Tr@Ph@@Dd@dB\\lAVdAJ`@@Hd@zB\\jBXnBJt@VlBJ~@Dl@Hv@Hz@HrAHrAD`ADn@LlDNfEd@dMFvADv@Dt@Dj@Db@F`AJz@B^Ff@Hp@Hp@LbANdA@HPbALr@Lp@?@Z~AR~@Rx@DPFVFX^|ANh@h@pBn@vBRp@Pf@`@lAt@xB`@hAx@tBfA|Cn@zABDj@pAd@dAv@`BjA`Cr@xA~@fBpBzDlAxBdBvCdAfBp@fA|@vAdBnC^l@nB|CrIvMPXV`@~@xAxAzBx@pAhAdBjAhBJNVb@b@p@fC|DrBjDt@xAd@`ApAjCTh@pAvCpAzCXp@v@fBXn@dA`C~BlF`DnH`BvDnBhEJRbA~B`E|IhClFjAzB@Bn@lAjAxBv@tAz@vAtBhD`BdCZb@x@lAj@v@BBl@z@`ApA`@f@hCbD`BrBTV@BjAvAdEbF`ArAtA`B^b@p@z@r@|@BBhEpFfBzBr@`Ad@n@~@pAb@t@^h@h@|@V`@b@t@z@zAbAnBlA`CjAdCv@dBv@nBfApCp@nBRf@FP|@nCPj@`@rA@D\\lAVfADNLh@\\xAVtABHF`@Jl@PfADPJv@NfANrAL|AJzADb@Dx@?@HdBBV@d@@n@?^?tA?V?dAApBAhBArABzCBlA?FHhBNhBR|A"
+                        },
+                        "start_location": {
+                            "lat": 40.7120815,
+                            "lng": -74.32269889999999
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "364 ft",
+                            "value": 111
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 13
+                        },
+                        "end_location": {
+                            "lat": 40.6627697,
+                            "lng": -74.4327532
+                        },
+                        "html_instructions": "Take exit <b>41</b> toward <b>Berkeley Heights</b>/<wbr/><b>Scotch Plains</b>",
+                        "maneuver": "ramp-right",
+                        "polyline": {
+                            "points": "ezdwFbnheMGpA?JAJEVELGJCFEDIBC@G@E@G?E?QA"
+                        },
+                        "start_location": {
+                            "lat": 40.6622718,
+                            "lng": -74.4318605
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.2 mi",
+                            "value": 284
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 33
+                        },
+                        "end_location": {
+                            "lat": 40.6644229,
+                            "lng": -74.43087369999999
+                        },
+                        "html_instructions": "Turn <b>right</b> onto <b>Drift Rd</b>",
+                        "maneuver": "turn-right",
+                        "polyline": {
+                            "points": "i}dwFtsheM?qACu@Ki@CGI_@KUS]CEMOOQo@_@[K_@EyAIc@E"
+                        },
+                        "start_location": {
+                            "lat": 40.6627697,
+                            "lng": -74.4327532
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.5 mi",
+                            "value": 860
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 86
+                        },
+                        "end_location": {
+                            "lat": 40.6681085,
+                            "lng": -74.4394372
+                        },
+                        "html_instructions": "Turn <b>left</b> onto <b>Plainfield Ave</b>",
+                        "maneuver": "turn-left",
+                        "polyline": {
+                            "points": "sgewF|gheMEj@AXAP?FAN?PA^?j@A|@Ax@AjA?XAb@AZAHAF?FCLCJADABAFEDKVs@|AYj@eAxBmAfCe@bAUd@Wb@GLUd@Yh@IPQ\\Ud@KTOXKTIRKTWd@OZOVOVU^OR_@l@y@nA"
+                        },
+                        "start_location": {
+                            "lat": 40.6644229,
+                            "lng": -74.43087369999999
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.4 mi",
+                            "value": 650
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 55
+                        },
+                        "end_location": {
+                            "lat": 40.667494,
+                            "lng": -74.4471005
+                        },
+                        "html_instructions": "Turn <b>left</b> onto <b>Mountain Ave</b>",
+                        "maneuver": "turn-left",
+                        "polyline": {
+                            "points": "u~ewFn}ieMDvAFjAHhBH~A@b@Bd@@l@@HHzCHtB?NLvDJ|BBt@D`ABZ@h@Dt@DtA@r@Bt@"
+                        },
+                        "start_location": {
+                            "lat": 40.6681085,
+                            "lng": -74.4394372
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.4 mi",
+                            "value": 700
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 71
+                        },
+                        "end_location": {
+                            "lat": 40.6737585,
+                            "lng": -74.4478574
+                        },
+                        "html_instructions": "Turn <b>right</b> onto <b>Rutgers Ave</b>",
+                        "maneuver": "turn-right",
+                        "polyline": {
+                            "points": "yzewFjmkeMwEXc@BuBL]Bc@BkBLoCNiBL}DVsDTyAH"
+                        },
+                        "start_location": {
+                            "lat": 40.667494,
+                            "lng": -74.4471005
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "374 ft",
+                            "value": 114
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 16
+                        },
+                        "end_location": {
+                            "lat": 40.6738885,
+                            "lng": -74.4491348
+                        },
+                        "html_instructions": "Turn <b>left</b> onto <b>Hamilton Ave</b><div style=\"font-size:0.9em\">Destination will be on the left</div>",
+                        "maneuver": "turn-left",
+                        "polyline": {
+                            "points": "_bgwFbrkeMFzABb@?P?L?LAJADCDCHCFADS^"
+                        },
+                        "start_location": {
+                            "lat": 40.6737585,
+                            "lng": -74.4478574
+                        },
+                        "travel_mode": "DRIVING"
+                    }
+                ],
+                "traffic_speed_entry": [],
+                "via_waypoint": []
+            }
+        ],
+        "overview_polyline": {
+            "points": "estwFrwwcMcDoAu@hDoBu@wB}@_@SsHmEaEyB{BoAg@tAc@fAkAm@SKWMk@WQIUM_A|EcAzEgArFEl@Mp@[rCQ~CMvBEj@YnBk@fCoAlEm@`CY`BOrAKzAEdDi@fIWxBu@fDsAtDkBpEoErK[r@u@hB]Xs@~A_@x@{@nBsA`D_BfEI`@g@zAQv@QdAEf@?ZHj@H\\P^NRVP`@LxCx@BDv@Tt@VXNZVZb@Rh@Fb@?`BMbAa@nBo@jCQdAIbAF~@DZJ\\LPJN\\HzBl@pBd@pE~@b@Bn@T|DpAjDhAhD|@bE|@vLnBhJzApDx@lCx@nDlAhD~AhEzBlBhAfBz@nBfAbB|@pI`FdEfChGrD~JdGbGnDhFjDvD~CjAdAhKlKrHlInChD`ArA`DbEp@t@`AfAjBdBvAjA`F`E|BlBtA~A|@pAp@lA|@zBVr@~@tDv@lD~AlHp@vBXv@t@|Av@tAh@v@jBtBv@p@tGbF|DrC`B`AjDdBBZBDHHfAj@n@d@pArAfBdB`A|A^t@\\~@Rv@Pz@`AnG^lB`@xAn@jB^p@b@l@p@r@hDbBd@f@^l@Xt@RfABV?v@Ex@c@fEYnCI`@Kb@yApHuAtG{@hD_AlDcJj\\wExPmA`Fm@pCgAxF}@nFeA~Hw@bIe@zF_@xGg@tL_@~Py@`k@K|GSzGw@bQGbD?tAJtB`@|EtBtQlAtMh@fI`@rIx@rVdAj\\HxCJvBz@dRb@lFb@fFLdABFLRJ|ANfCz@xJ|@jIv@hGr@~E~@jFj@|BhB~H~A|FzBfHlAlDnB~EhCvFfC~EdDhGxCpF`EvH|AzCpBpEbBxEb@pAvAbFjAlFv@zEb@bDd@`F^xGjAr[V|D^dEp@lFn@rDbAzEt@`D|BdIjCxH`CrGr@`BpAvCbCbFrB`E~DtHzG~KlWda@zEpHz@tAfC|DrBjDzAzCfBtD|DdJvSle@dG|MtEhJ|BjErBlDvEnHdClDnBlCjDjEdEfFdEbF`ArAtBdCrHnJzC|DdB`CdC~D~ApCpCpFbCjF~B`GjCxHrArEhAzEn@nDr@xE\\pDP~BRxDBjECxH@nFBtAXrER|AGpAAVKd@KROHYDWACgCOq@Uu@Wc@]a@o@_@[KyBOc@EEj@Cj@ChAEnFEbBIh@KV_DzGaDtGeCbFy@dBeAjBo@`Ay@nADvAPtDJbCPxFb@zLN|DPtFyW~AqJl@yAHFzABt@?ZK`@Yl@"
+        },
+        "summary": "I-78 W",
+        "warnings": [],
+        "waypoint_order": []
+    }
+]

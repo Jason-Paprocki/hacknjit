@@ -1,4 +1,2 @@
-# hacknjit
-Gas station
-lmaooo
-ricky's test commit
+# HackNJIT 2019
+Zachary Chuba, Jason Paprocki, Ricky Palaguachi
