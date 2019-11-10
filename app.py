@@ -75,7 +75,7 @@ def findPhoneNumber(phone_number, direction, messagebody):
                 # direction is end point so its the second collumn
                 else:
                     with open('mycsv.csv', 'w') as writeFile:
-                        row[index][2] = messagebody
+                        row[index][2] = str(messagebody)
                         writer = csv.writer(writeFile)
                         writer.writerow(row)
             # phone number doesnt exist so it adds the phone number with the message data
