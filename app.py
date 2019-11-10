@@ -24,7 +24,7 @@ def incoming_sms():
     #body_elements = body.split(' ')
     # Determine the right reply for this message
     if 'from' in body or 'From' in body:
-        writeToCsv()
+        writeToCsv(phone_number)
         resp.message(str(isInFile(phone_number)))
     elif 'To' in body or 'to' in body:
         resp.message(str(writeToCsv(phone_number)))
@@ -42,21 +42,22 @@ def isInFile(phone_number):
         for index in range(len(lines)):
             if str(phone_number) == str(line[index][0]):
                 print(lines)
-                return True
-        return False
+                return index
+        return -1
     readFile.close()
 
 #
 def writeToCsv(phone_number):
     with open('mycsv.csv', 'w') as writeFile:
         writer = csv.writer(writeFile)
+        if isInFile(phone_number) != -1:
+            print("legit")
+        else:
+            print("not legit")
 
-        for row in writeFile:
-                row[1] = ['cheanggeo  starting']
 
 
-
-        writer.writerow(row)
+        #writer.writerow(row)
 
 
     writeFile.close()
