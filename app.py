@@ -46,9 +46,8 @@ def phoneNumberHandler(phone_number):
     rows = list(csv_f)
 
     for row in rows:
-        print("beep")
-        if (str(rows[1][0]) == str(phone_number)):
-            print("why")
-        print("beep2")
+        if (str(rows[row][0]) == str(phone_number)):
+            print(row)
+            print("beep")
 if __name__ == "__main__":
     app.run(debug=True)
