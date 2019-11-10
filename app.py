@@ -50,7 +50,7 @@ def incoming_sms():
     return str(resp)
 
 def proccessTask(phone_number, direction, messagebody):
-    print(phone_number + direction + messagebody)
+    print(phone_number + " " + direction + " message "+ messagebody)
 
     #opens csv file for reading
     with open('mycsv.csv', 'r') as readFile:
