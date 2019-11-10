@@ -50,8 +50,8 @@ def phoneNumberHandler(phone_number):
     print(str(rows[1][0]) == str(phone_number))
 
     for row in csv_f:
-        if str(phone_number) in str(rows[1][0]):
-            print("yayay")
+        if (str(rows[1][0]) == str(phone_number)):
+            print("why")
 
 if __name__ == "__main__":
     app.run(debug=True)
