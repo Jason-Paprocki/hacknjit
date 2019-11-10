@@ -24,7 +24,7 @@ def incoming_sms():
         testing = ''
         all_messages = client.messages.list(limit=10)
         for m in all_messages:
-            testing += all_messages
+            testing += str(all_messages)
         resp.message('There are {} messages in your account.'.format(len(testing)))
     elif 'end' in body:
         resp.message(endInMessage())
