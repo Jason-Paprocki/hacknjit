@@ -29,6 +29,7 @@ def incoming_sms():
 
     messages = client.messages.list()
 
+    findPhoneNumber()
     '''for record in messages:
         if record.from_ == phone_number:
 
