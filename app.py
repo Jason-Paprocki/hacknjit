@@ -21,11 +21,11 @@ def incoming_sms():
 
     # Determine the right reply for this message
     if 'start' in body:
-        testing = ''
-        all_messages = client.messages.list(limit=10)
-        for m in all_messages:
-            testing += str(all_messages)
-        resp.message('There are {} messages in your account.'.format(len(testing)))
+        some_messages = client.messages.list(limit=10)
+        print('Here are the last 10 messages in your account:')
+        for m in some_messages:
+            print(m)
+        resp.message("we got it")
     elif 'end' in body:
         resp.message(endInMessage())
 
