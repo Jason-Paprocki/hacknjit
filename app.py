@@ -26,12 +26,15 @@ def incoming_sms():
 
     phone_number = request.form["From"]
 
-    count = 0
-
     messages = client.messages.list()
 
+
+    count = 0
     for record in messages:
-        print(record.from_)
+        if record.from_ == phone_number:
+            count +=1
+
+            
     #resp.message()
 
     #body_elements = body.split(' ')
