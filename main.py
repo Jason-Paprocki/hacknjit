@@ -8,8 +8,8 @@ from pprint import pprint
 
 key = "AIzaSyB3O7rrXNzMCbD1dK3Kmme_yCx3PruCVwk"
 gmap = googlemaps.Client(key='AIzaSyB3O7rrXNzMCbD1dK3Kmme_yCx3PruCVwk')
-origin = "20 John St, Little Ferry, NJ"
-destination = "250 Central Ave, Newark, NJ"
+
+
 #Gets Google Map route from Origin to Destination
 def get_route(gmap, origin, destination):
     result = gmap.directions(origin, destination)
@@ -23,11 +23,23 @@ def sort_by_price(gs_list):
     # Traverse through all array elements
     for i in range(len(gs_list)):
         # Last i elements are already in place
-        for j in range(0, n-i-1):
+        for j in range(0, (len(gs_list))-i-1):
             # traverse the array from 0 to n-i-1
             # Swap if the element found is greater
             # than the next element
-            if gs_list[j].price > gs_list[j+1].price :
+            j_price = gs_list.price[j][0]
+            i_price = gs_list.price[j+1][0]
+            if j_price != '---':
+                j_price = float(j_price)
+            else:
+                j_price = 0.0
+
+            if i_price != '---':
+                i_price = float(i_price)
+            else:
+                i_price = 0.0
+
+            if j_price > i_price :
                 gs_list[j], gs_list[j+1] = gs_list[j+1], gs_list[j]
 
 
@@ -75,4 +87,8 @@ def main(origin, destination):
     print(route_url)
 
 if __name__ == '__main__':
-    main(origin, destination)
+    with open('mycsv.csv', 'r') as in_file:
+        origin = in_file.read()
+        destination = in_file.read()
+
+        main(origin, destination)
