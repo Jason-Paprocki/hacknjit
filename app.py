@@ -28,26 +28,26 @@ def incoming_sms():
 
     # Determine the right reply for this message
     if 'Start' in body:
-        print("yteqg")
+        startInMessage()
     elif 'end' in body:
         resp.message(endInMessage())
 
     return str(resp)
 
+#handling requests from the user
 rows = list(csv_f)
 
 def startInMessage():
-    return "testing works"
+    return body
 
 def endInMessage():
     return "yert"
 
 def phoneNumberHandler(phone_number):
-
     for i in range(len(rows)):
         if (str(rows[i][0]) == str(phone_number)):
-            print(i)
-            print("beep")
+            return True
+    return False
 
 if __name__ == "__main__":
     app.run(debug=True)
