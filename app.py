@@ -87,8 +87,7 @@ def proccessTask(phone_number, direction, messagebody):
                 # direction is end point so its the second collumn
                 else:
                     with open('mycsv.csv', 'a') as appendFile:
-                        row = [phone_number,str(messagebody), '']
-                        writer = csv.writer(row)
+                        lines.append([phone_number,str(messagebody), ''])
 
 
 
