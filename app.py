@@ -36,9 +36,9 @@ def incoming_sms():
     if (body[0] == "go"):
         direction = "go"
         messagebody = body[1]
-        findPhoneNumber(phone_number, direction, messagebody)"""
+        findPhoneNumber(phone_number, direction, messagebody)
 
-'''
+
     findPhoneNumber(phone_number, body)
     for record in messages:
         if record.from_ == phone_number:
@@ -47,13 +47,14 @@ def incoming_sms():
         data[2][1] = '20.6'
 
         writer = csv.writer(open('mycsv.csv', 'wb'))
-        writer.writerows(data)'''
+        writer.writerows(data)
+        """
 
 
 
     #reply to message
     #resp.message()
-    #return str(resp)
+    return str(resp)
 
 def findPhoneNumber(phone_number, direction, messagebody):
     #opens csv file for reading
