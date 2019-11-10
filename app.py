@@ -24,13 +24,14 @@ def incoming_sms():
     resp = MessagingResponse()
 
     phone_number = request.form["From"]
-    phoneNumberHandler(phone_number)
 
     # Determine the right reply for this message
     if 'Start' in body or 'start' in body:
-        startInMessage(body)
+        resp.message(str(startInMessage(body)))
     elif 'end' in body or 'End' in body:
         resp.message(endInMessage())
+
+
 
     return str(resp)
 
@@ -39,21 +40,16 @@ rows = list(csv_f)
 
 #call this method for the starting location
 def startInMessage(body):
-    return True
+    for i in range(len(rows)):
+        if (str(rows[i][0]) == str(phone_number)):
+            rows[i][1] = body
+            return
 
 #call this method for the end location
 def endInMessage(body):
     return True
 
-#this will handle the phone number
-def phoneNumberHandler(phone_number):
-    for i in range(len(rows)):
-        if (str(rows[i][0]) == str(phone_number)):
 
-            if (startInMessage(body)):
-                rows[i][1] = body
-            if endInMessage():
-                return
 
     return False
 
