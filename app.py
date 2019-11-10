@@ -31,26 +31,18 @@ def incoming_sms():
     messages = client.messages.list()
 
     body_elements = body.split(' ')
-    print(body_elements)
-    """
+
     if (body[0] == "go"):
         direction = "go"
         messagebody = body[1]
         findPhoneNumber(phone_number, direction, messagebody)
-
-
-    findPhoneNumber(phone_number, body)
-    for record in messages:
-        if record.from_ == phone_number:
-
-
-        data[2][1] = '20.6'
-
-        writer = csv.writer(open('mycsv.csv', 'wb'))
-        writer.writerows(data)
-        """
-
-
+    elif:
+        (body[0] == "from"):
+        direction = "from"
+        messagebody = body[1]
+        findPhoneNumber(phone_number, direction, messagebody)
+    else:
+        resp.message("This is an incorrect syntax")
 
     #reply to message
     #resp.message()
@@ -68,7 +60,7 @@ def findPhoneNumber(phone_number, direction, messagebody):
             #found the phone number already
             if str(phone_number) == lines[index][0]:
                 #direction is go so its the first collumn
-                if (direction == "go"):
+                if (direction == "from"):
                     with open('mycsv.csv', 'w') as writeFile:
                         row[index][1] = messagebody
                         writer = csv.writer(row)
