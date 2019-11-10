@@ -34,15 +34,14 @@ def incoming_sms():
 
 
 
-    if (body_elements[0] == "go"):
-
+    if (body_elements[0] == "Go" or body_elements[0] == "go" or body_elements[0] == "GO"):
         direction = "go"
         messagebody = body[1]
-        findPhoneNumber(phone_number, direction, messagebody)
+        proccessTask(phone_number, direction, messagebody)
     elif(body_elements[0] == "from"):
         direction = "from"
         messagebody = body[1]
-        findPhoneNumber(phone_number, direction, messagebody)
+        proccessTask(phone_number, direction, messagebody)
     else:
         resp.message("This is an incorrect syntax")
 
@@ -50,9 +49,9 @@ def incoming_sms():
     #resp.message()
     return str(resp)
 
-def findPhoneNumber(phone_number, direction, messagebody):
+def proccessTask(phone_number, direction, messagebody):
     print(phone_number + direction + messagebody)
-    row=[]
+
     #opens csv file for reading
     with open('mycsv.csv', 'r') as readFile:
         reader = csv.reader(readFile)
@@ -68,8 +67,8 @@ def findPhoneNumber(phone_number, direction, messagebody):
                 # direction is go so its the first collumn
                 if (direction == "from"):
                     with open('mycsv.csv', 'w') as writeFile:
-                        row[index][1] = messagebody
-                        writer = csv.writer(row)
+                        lines[index][1] = messagebody
+                        writer = csv.writer(lines)
 
                 # direction is end point so its the second collumn
                 else:
