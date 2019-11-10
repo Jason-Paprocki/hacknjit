@@ -31,7 +31,7 @@ def incoming_sms():
     messages = client.messages.list()
 
     body_elements = body.split(' ')
-
+    print(body[0])
     if (body[0] == "go"):
         direction = "go"
         messagebody = body[1]
