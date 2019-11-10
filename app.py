@@ -43,8 +43,8 @@ def isInFile():
 def writeToCsv():
     row = ['123456789', 'starting', 'Ending']
     with open('mycsv.csv', 'w') as writeFile:
-    writer = csv.writer(writeFile)
-    writer.writerow()
+        writer = csv.writer(writeFile)
+        writer.writerow(row)
     writeFile.close()
 
 
