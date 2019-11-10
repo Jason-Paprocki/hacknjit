@@ -38,7 +38,7 @@ def incoming_sms():
         direction = "go"
         messagebody = body_elements[1]
         proccessTask(phone_number, direction, messagebody)
-    elif(body_elements[0] == "from"):
+    elif(body_elements[0] == "From" or body_elements[0] == "from" or body_elements[0] == "FROM"):
         direction = "from"
         messagebody = body_elements[1]
         proccessTask(phone_number, direction, messagebody)
