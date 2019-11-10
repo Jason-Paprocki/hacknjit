@@ -1,25 +1,18 @@
-from flask import Flask, request, make_response
-from datetime import datetime, timedelta
+from flask import Flask, request, redirect
 from twilio.twiml.messaging_response import MessagingResponse
 
 app = Flask(__name__)
 
-@app.route("/sms")
-def sms():
+@app.route("/sms", methods=['GET', 'POST'])
+def sms_reply():
+    """Respond to incoming calls with a simple text message."""
+    # Start our TwiML response
+    resp = MessagingResponse()
 
-    #get the cookie value, or default to zero
-    messagecount = int(request.cookies.get('messagecount',0))
-    messagecount += 1
+    # Add a message
+    resp.message("The Robots are coming! Head for the hills!")
 
-    twml = MessagingResponse()
-    twml.message("You've sent " + str(messagecount) + " messages in this conversation so far")
-
-    resp = make_response(str(twml))
-
-    expires=datetime.utcnow() + timedelta(hours=4)
-    resp.set_cookie('messagecount',value=str(messagecount),expires=expires.strftime('%a, %d %b %Y %H:%M:%S GMT'))
-
-    return resp
+    return str(resp)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
