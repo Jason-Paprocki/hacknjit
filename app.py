@@ -1,30 +1,49 @@
 from flask import Flask, request, redirect
 from twilio.twiml.messaging_response import MessagingResponse
-from datetime import datetime, timedelta
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 
 app = Flask(__name__)
 
 @app.route("/sms", methods=['GET', 'POST'])
-def incoming_sms():
-    # Start our TwiML response
-    resp = MessagingResponse()
 
+scope = ['https://spreadsheets.google.com/feeds']
+creds = ServiceAccountCredentials.from_json_keyfile_name('twilio-d71c51008463.json', scope)
+client = gspread.authorize(creds)
+
+sheet = client.open('twilio').sheet1
+
+
+
+
+
+def incoming_sms():
     """Send a dynamic reply to an incoming text message"""
     # Get the message the user sent our Twilio number
     body = request.values.get('Body', None)
 
-    #get the cookie value, or default to zero
-    messagecount = int(request.cookies.get('messagecount',0))
-    messagecount += 1
+    # Start our TwiML response
+    resp = MessagingResponse()
 
-    resp.message("You've sent " + str(messagecount) + " messages in this conversation so far")
-
-
-    expires=datetime.utcnow() + timedelta(hours=4)
-    resp.set_cookie('messagecount',value=str(messagecount),expires=expires.strftime('%a, %d %b %Y %H:%M:%S GMT'))
-
+    # Determine the right reply for this message
+    if body == 'hello':
+        resp.message("Hi!")
+    elif body == 'bye':
+        resp.message("Goodbye")
 
     return str(resp)
+
+
+all_data = sheet.get_all_records()
+print(all_data)
+
+
+
+
+
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
