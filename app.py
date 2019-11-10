@@ -23,7 +23,7 @@ def incoming_sms():
 
 
 
-def testing()
+def testing():
     return "testing works"
 
 
