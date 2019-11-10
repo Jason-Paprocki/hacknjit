@@ -53,7 +53,7 @@ def incoming_sms():
 
     #reply to message
     #resp.message()
-    return str(resp)
+    #return str(resp)
 
 def findPhoneNumber(phone_number, direction, messagebody):
     #opens csv file for reading
