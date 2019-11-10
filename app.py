@@ -44,10 +44,11 @@ def endInMessage():
 
 def phoneNumberHandler(phone_number):
     rows = list(csv_f)
-
+    print(len(rows))
+'''
     for i in range(len(rows)):
         print(i)
-        '''
+
         if (str(rows[i][0]) == str(phone_number)):
             print(i)
             print("beep")
