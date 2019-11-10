@@ -50,8 +50,8 @@ def phoneNumberHandler(phone_number):
     for i in range(len(rows)):
         if (str(rows[i][0]) == str(phone_number)):
 
-            if (startInMessage()):
-                rows[i][1] = message
+            if (startInMessage(body)):
+                rows[i][1] = body
             if endInMessage():
                 return
 
