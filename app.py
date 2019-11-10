@@ -43,8 +43,8 @@ def endInMessage():
     return "yert"
 
 def phoneNumberHandler(phone_number):
-    print("Beep")
     for row in csv_f:
+        print(phone_number)
         if phone_number == csv_f:
             print("yayay")
 
