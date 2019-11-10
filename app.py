@@ -31,13 +31,15 @@ def incoming_sms():
     messages = client.messages.list()
 
     body_elements = body.split(' ')
-    print(body_elements[0])
+
 
 
     if (body_elements[0] == "go"):
+        print("beep")
         direction = "go"
         messagebody = body[1]
         findPhoneNumber(phone_number, direction, messagebody)
+        print("beep2")
     elif(body_elements[0] == "from"):
         direction = "from"
         messagebody = body[1]
@@ -50,6 +52,8 @@ def incoming_sms():
     return str(resp)
 
 def findPhoneNumber(phone_number, direction, messagebody):
+    print(phone_number + direction + messagebody)
+    row=[]
     #opens csv file for reading
     with open('mycsv.csv', 'r') as readFile:
         reader = csv.reader(readFile)
@@ -60,11 +64,13 @@ def findPhoneNumber(phone_number, direction, messagebody):
         for index in range(len(lines)):
             #found the phone number already
             if str(phone_number) == lines[index][0]:
+
                 #direction is go so its the first collumn
                 if (direction == "from"):
                     with open('mycsv.csv', 'w') as writeFile:
                         row[index][1] = messagebody
                         writer = csv.writer(row)
+
                 #direction is end point so its the second collumn
                 else:
                     with open('mycsv.csv', 'w') as writeFile:
