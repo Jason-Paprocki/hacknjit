@@ -30,7 +30,7 @@ def incoming_sms():
 
     messages = client.messages.list()
 
-    body_elements = body.split(' ')
+    body_elements = str(body).split(' ')
 
 
 
