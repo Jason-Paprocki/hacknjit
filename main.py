@@ -21,7 +21,7 @@ def jsonify(request_info):
 #Sorts Gas Station objects by their price
 def sort_by_price(gs_list):
     # Traverse through all array elements
-    for i in range(gs_list):
+    for i in range(len(gs_list)):
         # Last i elements are already in place
         for j in range(0, n-i-1):
             # traverse the array from 0 to n-i-1
