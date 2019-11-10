@@ -62,11 +62,11 @@ def proccessTask(phone_number, direction, messagebody):
 
             # found the phone number already
             if str(phone_number) == str(lines[index][0]):
-
+                print(index)
                 # direction is go so its the first collumn
                 if (direction == "from"):
                     with open('mycsv.csv', 'w') as writeFile:
-                        print()
+                        print(index)
                         lines[index] = [lines[index][0], str(messagebody), lines[index][2]]
                         writer = csv.writer(writeFile)
                         writer.writerow(lines[index])
@@ -74,6 +74,7 @@ def proccessTask(phone_number, direction, messagebody):
                 # direction is end point so its the second collumn
                 else:
                     with open('mycsv.csv', 'w') as writeFile:
+                        print(index)
                         lines[index] = [lines[index][0], lines[index][1], str(messagebody)]
                         writer = csv.writer(writeFile)
                         writer.writerow(lines[index])
