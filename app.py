@@ -35,11 +35,10 @@ def incoming_sms():
 
 
     if (body_elements[0] == "go"):
-        print("beep")
+
         direction = "go"
         messagebody = body[1]
         findPhoneNumber(phone_number, direction, messagebody)
-        print("beep2")
     elif(body_elements[0] == "from"):
         direction = "from"
         messagebody = body[1]
