@@ -7,13 +7,12 @@ account_sid = 'AC1f8226cae497269ca7a9680131a2d2af'
 auth_token = '00b0091d18423f8ac406fd4c8d83e861'
 client = Client(account_sid, auth_token)
 
-
-f = open('mycsv.csv')
-csv_r = csv.reader(f)
+with open('mycsv.csv', 'w')as r:
+    csv_r = csv.reader(r)
+    with open('mycsv.csv', 'w') as w:
+        csv_w=csv.writer(w)
 rows = list(csv_r)
 
-#w = open('mycsv.csv', 'w')
-writer = csv.writer(f)
 
 app = Flask(__name__)
 @app.route("/sms", methods=['GET', 'POST'])
@@ -38,14 +37,17 @@ def incoming_sms():
 
     return str(resp)
 
+#handling requests from the user
+
 
 #call this method for the starting location
 def startInMessage(body, phone_number):
     for i in range(len(rows)):
         if (str(rows[i][0]) == str(phone_number)):
-            rows[i][1] = writer.writerow(body)
+            print(rows)
+            #rows[i][1] = writer.writerow(body)
             return
-    rows[i+1][1] = writer.writerow(body)
+
 
 #call this method for the end location
 def endInMessage(body):
