@@ -30,17 +30,18 @@ def incoming_sms():
 
     messages = client.messages.list()
 
+    print(body)
     body_elements = str(body).split(' ')
 
 
 
     if (body_elements[0] == "Go" or body_elements[0] == "go" or body_elements[0] == "GO"):
         direction = "go"
-        messagebody = body[1]
+        messagebody = body_elements[1]
         proccessTask(phone_number, direction, messagebody)
     elif(body_elements[0] == "from"):
         direction = "from"
-        messagebody = body[1]
+        messagebody = body_elements[1]
         proccessTask(phone_number, direction, messagebody)
     else:
         resp.message("This is an incorrect syntax")
@@ -50,7 +51,7 @@ def incoming_sms():
     return str(resp)
 
 def proccessTask(phone_number, direction, messagebody):
-    print(phone_number + " " + direction + " message "+ messagebody)
+    print(phone_number + " te diretion is: " + direction + " message: "+ messagebody)
 
     #opens csv file for reading
     with open('mycsv.csv', 'r') as readFile:
