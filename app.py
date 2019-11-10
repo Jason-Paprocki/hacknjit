@@ -36,8 +36,7 @@ def incoming_sms():
         direction = "go"
         messagebody = body[1]
         findPhoneNumber(phone_number, direction, messagebody)
-    elif:
-        (body[0] == "from"):
+    elif(body[0] == "from"):
         direction = "from"
         messagebody = body[1]
         findPhoneNumber(phone_number, direction, messagebody)
