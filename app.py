@@ -4,6 +4,7 @@ import csv
 from twilio.rest import Client
 import requests
 import os
+import sys
 
 account_sid = 'AC1f8226cae497269ca7a9680131a2d2af'
 auth_token = '00b0091d18423f8ac406fd4c8d83e861'
@@ -50,9 +51,9 @@ def findPhoneNumber():
     with file("mycsv.csv", "r") as r_csv:
         os.remove("mycsv.csv")
         r = csvreader(r_csv)
-            with file("mycsv.csv", "w") as w_csv:
-                r_list = list(r)
-                print(r_list)
+        with file("mycsv.csv", "w") as w_csv:
+            r_list = list(r)
+            print(r_list)
 
 if __name__ == "__main__":
     app.run(debug=True)
