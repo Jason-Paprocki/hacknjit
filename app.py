@@ -18,7 +18,7 @@ app = Flask(__name__)
 def incoming_sms():
     """Send a dynamic reply to an incoming text message"""
     # Get the message the user sent our Twilio number
-    body = request.values.get('Body', None)
+    message = request.values.get('message', None)
 
     # Start our TwiML response
     resp = MessagingResponse()
@@ -27,9 +27,9 @@ def incoming_sms():
     phoneNumberHandler(phone_number)
 
     # Determine the right reply for this message
-    if 'Start' in body:
+    if 'Start' in message:
         print("yteqg")
-    elif 'end' in body:
+    elif 'end' in message:
         resp.message(endInMessage())
 
     return str(resp)
@@ -46,7 +46,7 @@ def phoneNumberHandler(phone_number):
     rows = list(csv_f)
 
     for i in range(rows):
-        print(rows[i])
+        print(i)
         '''
         if (str(rows[i][0]) == str(phone_number)):
             print(i)
