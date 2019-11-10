@@ -8,8 +8,8 @@ from pprint import pprint
 
 key = "AIzaSyB3O7rrXNzMCbD1dK3Kmme_yCx3PruCVwk"
 gmap = googlemaps.Client(key='AIzaSyB3O7rrXNzMCbD1dK3Kmme_yCx3PruCVwk')
-origin = "20 John St, Little Ferry, NJ"
-destination = "250 Central Ave, Newark, NJ"
+
+
 #Gets Google Map route from Origin to Destination
 def get_route(gmap, origin, destination):
     result = gmap.directions(origin, destination)
@@ -87,4 +87,8 @@ def main(origin, destination):
     print(route_url)
 
 if __name__ == '__main__':
-    main(origin, destination)
+    with open('mycsv.csv', 'r') as in_file:
+        origin = in_file.read()
+        destination = in_file.read()
+
+        main(origin, destination)
