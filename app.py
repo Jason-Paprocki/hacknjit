@@ -45,7 +45,7 @@ def endInMessage():
 def phoneNumberHandler(phone_number):
     rows = list(csv_f)
 
-    for row in csv_f:
+    for row in rows:
         print("beep")
         if (str(rows[1][0]) == str(phone_number)):
             print("why")
