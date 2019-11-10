@@ -4,14 +4,16 @@ import csv
 from twilio.rest import Client
 import requests
 
-account_sid = 'AC1f8226cae497269ca7a9680131a2d2af'
+'''account_sid = 'AC1f8226cae497269ca7a9680131a2d2af'
 auth_token = '00b0091d18423f8ac406fd4c8d83e861'
 client = Client(account_sid, auth_token)
 
 
 
 url = "https://api.twilio.com/2010-04-01/Accounts/AC1f8226cae497269ca7a9680131a2d2af/Messages.json"
-app = Flask(__name__)
+app = Flask(__name__)'''
+
+
 @app.route("/sms", methods=['GET', 'POST'])
 
 def incoming_sms():
@@ -27,9 +29,9 @@ def incoming_sms():
     count = 0
 
     messages = client.messages.list()
-    
+
     for record in messages:
-        print(record.sid)
+        print(record.from_)
     #resp.message()
 
     #body_elements = body.split(' ')
