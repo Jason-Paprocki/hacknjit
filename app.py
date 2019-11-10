@@ -30,14 +30,17 @@ def incoming_sms():
 
     messages = client.messages.list()
 
-    """body_elements = body.split(' ')
+    body_elements = body.split(' ')
+    print(body_elements)
+"""
     if (body[0] == "go"):
         direction = "go"
         messagebody = body[1]
         findPhoneNumber(phone_number, direction, messagebody)"""
 
+'''
     findPhoneNumber(phone_number, body)
-    '''for record in messages:
+    for record in messages:
         if record.from_ == phone_number:
 
 
