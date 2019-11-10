@@ -34,7 +34,7 @@ def incoming_sms():
         if record.from_ == phone_number:
             count +=1
 
-    print(co)
+    print(count)
     #resp.message()
 
     #body_elements = body.split(' ')
