@@ -76,8 +76,7 @@ def proccessTask(phone_number, direction, messagebody):
                 # direction is end point so its the second collumn
                 else:
                     with open('mycsv.csv', 'w') as writeFile:
-                        print(index)
-                        print(lines[index])
+                        print("THIS ONE " + lines[index])
                         lines[index] = [lines[index][0], lines[index][1], str(messagebody)]
                         writer = csv.writer(writeFile)
                         writer.writerow(lines)
