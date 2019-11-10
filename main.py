@@ -1,5 +1,9 @@
 import json
 import requests
+import googlemaps
+import route_data_parser
+import MapPoint
+import webscrape_gas_prices
 
 key = "AIzaSyB3O7rrXNzMCbD1dK3Kmme_yCx3PruCVwk"
 gmap = googlemaps.Client(key='AIzaSyB3O7rrXNzMCbD1dK3Kmme_yCx3PruCVwk')
@@ -39,18 +43,20 @@ def generate_final_route(pointA, pointB, gs):
                "waypoints" : gs}
 
     final_url = url + "api=1"
-    final_url += "origin=" : pointA.get_lat_lng_str()
-    final_url += "destination=" : pointB.get_lat_lng_str()
-    final_url += "waypoints=" : gs.point.get_lat_lng_str()
+    final_url += "origin=" + pointA.get_lat_lng_str()
+    final_url += "destination=" + pointB.get_lat_lng_str()
+    final_url += "waypoints=" + gs.point.get_lat_lng_str()
 
     return final_url
 
 def main(origin, destination):
     #generate a json file to grab turn data from route of origin->destination
     route_AtoB_json = get_route(gmap, origin, destination)
-    pointA = data_from_route[0][0]
-    pointB = data_from_route[0][1]
-    turns_list = parse_json_for_turns(route_AtoB_json)[1]
+    parsed_json = parse_json_for_turns(route_AtoB_json)
+
+    pointA = parsed_json[0][0]
+    pointB = parsed_json[0][1]
+    turns_list = parsed_json[1]
 
     #calculate the midpoint of all consecutive turns and list them
     midpoint_list = []
