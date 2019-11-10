@@ -31,17 +31,19 @@ def incoming_sms():
     messages = client.messages.list()
 
     body_elements = body.split(' ')
-    print(body[0])
-    if (body[0] == "go"):
+    print(body_elements[0])
+
+
+    if (body_elements[0] == "go"):
         direction = "go"
         messagebody = body[1]
         findPhoneNumber(phone_number, direction, messagebody)
-    elif(body[0] == "from"):
+    elif(body_elements[0] == "from"):
         direction = "from"
         messagebody = body[1]
         findPhoneNumber(phone_number, direction, messagebody)
     else:
-        resp.message("This is an incorrect syntax")
+        #resp.message("This is an incorrect syntax")
 
     #reply to message
     #resp.message()
