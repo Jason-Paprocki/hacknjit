@@ -29,7 +29,7 @@ class MapPoint:
         self.lat = location["lat"]
         self.lng = location["lng"]
 
-    
+
     def __str__(self):
         string = "(" + self.lat_str + ", " + self.lng_str + "), "
 
