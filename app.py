@@ -47,10 +47,13 @@ def incoming_sms():
     return str(resp)
 
 def findPhoneNumber():
-    with open('mycsv.csv', 'r') as csv_file:
-        csv_reader = csv.reader('mycsv.csv')
-        csv_list = list(csv_reader)
-        print(csv_list)
-        
+    with file("mycsv.csv", "r") as r_csv:
+        os.remove("mycsv.csv"):
+
+            with file("mycsv.csv", "w") as w_csv:
+                r = csvreader(r_csv)
+                r_list = list(r)
+                print(r_list)
+
 if __name__ == "__main__":
     app.run(debug=True)
