@@ -21,7 +21,7 @@ def incoming_sms():
 
     # Determine the right reply for this message
     if 'start' in body:
-         all_messages = client.messages.list()
+        all_messages = client.messages.list()
         resp.message('There are {} messages in your account.'.format(len(all_messages)))
     elif 'end' in body:
         resp.message(endInMessage())
