@@ -7,12 +7,6 @@ account_sid = 'AC1f8226cae497269ca7a9680131a2d2af'
 auth_token = '00b0091d18423f8ac406fd4c8d83e861'
 client = Client(account_sid, auth_token)
 
-with open('mycsv.csv', 'r')as r:
-    csv_r = csv.reader(r)
-    with open('mycsv.csv', 'w') as w:
-        csv_w=csv.writer(w)
-rows = list(csv_r)
-
 
 app = Flask(__name__)
 @app.route("/sms", methods=['GET', 'POST'])
@@ -38,6 +32,20 @@ def incoming_sms():
     return str(resp)
 
 #handling requests from the user
+
+def isInFile():
+    with open('mycsv.csv', 'r') as readFile:
+        reader = csv.reader(readFile)
+        lines = list(reader)
+        print(lines)
+    readFile.close()
+
+def writeToCsv():
+    row = ['123456789', 'starting', 'Ending']
+    with open('mycsv.csv', 'w') as writeFile:
+    writer = csv.writer(writeFile)
+    writer.writerow()
+    writeFile.close()
 
 
 #call this method for the starting location
