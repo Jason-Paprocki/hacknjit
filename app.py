@@ -62,29 +62,30 @@ def findPhoneNumber(phone_number, direction, messagebody):
 
         #iterates through whole csv file
         for index in range(len(lines)):
-            #found the phone number already
-            if str(phone_number) == lines[index][0]:
 
-                #direction is go so its the first collumn
+            # found the phone number already
+            if str(phone_number) == str(lines[index][0]):
+
+                # direction is go so its the first collumn
                 if (direction == "from"):
                     with open('mycsv.csv', 'w') as writeFile:
                         row[index][1] = messagebody
                         writer = csv.writer(row)
 
-                #direction is end point so its the second collumn
+                # direction is end point so its the second collumn
                 else:
                     with open('mycsv.csv', 'w') as writeFile:
                         row[index][2] = messagebody
                         writer = csv.writer(row)
-            #phone number doesnt exist so it adds the phone number with the message data
+            # phone number doesnt exist so it adds the phone number with the message data
             else:
-                #direction is go so its the first collumn
+                # direction is go so its the first collumn
                 if (direction == "go"):
                     with open('mycsv.csv', 'a') as appendFile:
-                        row = [phone_number,messagebody,"" ]
+                        row = [phone_number, messagebody, '']
                         writer = csv.writer(appendFile)
                         writer.writerow(row)
-                #direction is end point so its the second collumn
+                # direction is end point so its the second collumn
                 else:
                     with open('mycsv.csv', 'a') as appendFile:
                         row = [phone_number,"", messagebody]
