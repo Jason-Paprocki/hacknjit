@@ -9,9 +9,9 @@ client = Client(account_sid, auth_token)
 
 
 f = open('mycsv.csv')
-csv_f = csv.reader(f)
-rows = list(csv_f)
-
+csv_r = csv.reader(f)
+rows = list(csv_r)
+writer = csv.writer(f)
 
 app = Flask(__name__)
 @app.route("/sms", methods=['GET', 'POST'])
@@ -43,7 +43,7 @@ def incoming_sms():
 def startInMessage(body, phone_number):
     for i in range(len(rows)):
         if (str(rows[i][0]) == str(phone_number)):
-            rows[i][1] = body
+            rows[i][1] = writer.writerow(body)
             return
 
 #call this method for the end location
