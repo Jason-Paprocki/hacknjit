@@ -82,12 +82,14 @@ def proccessTask(phone_number, direction, messagebody):
                 # direction is go so its the first collumn
                 if (direction == "go"):
                     with open('mycsv.csv', 'a') as appendFile:
-                        appendFile.write([str(phone_number), '', str(messagebody)])
+                        templine = [str(phone_number), '', str(messagebody)]
+                        appendFile.write(templine)
 
                 # direction is end point so its the second collumn
                 else:
                     with open('mycsv.csv', 'a') as appendFile:
-                        appendFile.write([str(phone_number),str(messagebody), ''])
+                        templine = [str(phone_number), str(messagebody), '']
+                        appendFile.write(templine)
 
 
 
