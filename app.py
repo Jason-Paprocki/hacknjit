@@ -27,9 +27,9 @@ def incoming_sms():
     phoneNumberHandler(phone_number)
 
     # Determine the right reply for this message
-    if 'Start' in body:
-        resp.message(str(phoneNumberHandler(phone_number)))
-    elif 'end' in body:
+    if 'Start' in body or 'start' in body:
+        startInMessage(body)
+    elif 'end' in body or 'End' in body:
         resp.message(endInMessage())
 
     return str(resp)
@@ -37,16 +37,24 @@ def incoming_sms():
 #handling requests from the user
 rows = list(csv_f)
 
+#call this method for the starting location
 def startInMessage(message):
-    return message
+    return True
 
-def endInMessage():
-    return "yert"
+#call this method for the end location
+def endInMessage(message):
+    return True
 
+#this will handle the phone number
 def phoneNumberHandler(phone_number):
     for i in range(len(rows)):
         if (str(rows[i][0]) == str(phone_number)):
-            return True
+
+            if (startInMessage(message)):
+                rows[i][1] = message
+            if endInMessage(message):
+                return
+
     return False
 
 if __name__ == "__main__":
