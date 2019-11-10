@@ -2,13 +2,14 @@ import googlemaps
 
 class MapPoint:
     #constructor for turn MapPoints
-    def __init__(self, lat, lng, dist_to_next=-1.0, address=""):
+    def __init__(self, lat, lng, dist_to_next=-1.0, address="", radius=None):
         self.lat = lat
         self.lng = lng
         self.dist_to_next = dist_to_next
         self.lat_str = format(lat, '.15f')
         self.lng_str = format(lng, '.15f')
         self.dist_to_next_str = format(float(dist_to_next), '.4f')
+        self.radius = radius
 
         #some address was specified at instantiation
         if address != "":
@@ -43,7 +44,8 @@ class MapPoint:
     def eucl_midpoint_between(self, o):
         x = (self.lat + o.lat) / 2.0
         y = (self.lng + o.lng) / 2.0
-        return MapPoint(x, y)
+        distance = ((self.lat + o.lat)**2 + (self.lng + o.lng)**2)**.5
+        return MapPoint(x, y, radius=distance)
 
     #reverse geocode an address and get a pair of (lat, lng) coords
     def reverse_geocode(self):
