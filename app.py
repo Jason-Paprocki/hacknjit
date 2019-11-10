@@ -5,7 +5,7 @@ from twilio.rest import Client
 import requests
 import os
 import sys
-
+from main import main
 account_sid = 'AC1f8226cae497269ca7a9680131a2d2af'
 auth_token = '00b0091d18423f8ac406fd4c8d83e861'
 client = Client(account_sid, auth_token)
@@ -47,7 +47,8 @@ def incoming_sms():
 
     #reply to message
     #resp.message()
-    return str(resp)
+
+    return str(resp.message(main(origin, destination)))
 
 def proccessTask(phone_number, direction, messagebody):
     print(phone_number + " te diretion is: " + direction + " message: "+ messagebody)
