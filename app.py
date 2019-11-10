@@ -28,19 +28,17 @@ def incoming_sms():
 
     phone_number = request.form["From"]
 
-    messages = client.messages.list()
-
     body_elements = str(body).split(' ')
 
 
 
     if (body_elements[0] == "Go" or body_elements[0] == "go" or body_elements[0] == "GO"):
         direction = "go"
-        messagebody = body_elements[1]
+        messagebody = str(body)
         proccessTask(phone_number, direction, messagebody)
     elif(body_elements[0] == "From" or body_elements[0] == "from" or body_elements[0] == "FROM"):
         direction = "from"
-        messagebody = body_elements[1]
+        messagebody = str(body)
         proccessTask(phone_number, direction, messagebody)
     else:
         resp.message("This is an incorrect syntax")
@@ -52,7 +50,6 @@ def incoming_sms():
     #return str(resp.message(main(origin, destination)))
 
 def proccessTask(phone_number, direction, messagebody):
-    print(phone_number + " te diretion is: " + direction + " message: "+ messagebody)
 
     #opens csv file for reading
     with open('mycsv.csv', 'r') as readFile:
@@ -72,6 +69,7 @@ def proccessTask(phone_number, direction, messagebody):
                         lines[index] = [lines[index][0], str(messagebody), lines[index][2]]
                         writer = csv.writer(writeFile)
                         writer.writerow(lines)
+                        lines.remove(lines[index])
                         return
                 # direction is end point so its the second collumn
                 else:
@@ -80,6 +78,7 @@ def proccessTask(phone_number, direction, messagebody):
                         lines[index] = [lines[index][0], lines[index][1], str(messagebody)]
                         writer = csv.writer(writeFile)
                         writer.writerow(lines)
+                        lines.remove(lines[index])
                         return
 
             # phone number doesnt exist so it adds the phone number with the message data
