@@ -1,21 +1,8 @@
 from flask import Flask, request, redirect
 from twilio.twiml.messaging_response import MessagingResponse
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
-
-
-scope = ['https://spreadsheets.google.com/feeds']
-creds = ServiceAccountCredentials.from_json_keyfile_name('twilio-d71c51008463.json', scope)
-client = gspread.authorize(creds)
-
-sheet = client.open('twilio').sheet1
-
-
 
 app = Flask(__name__)
-
 @app.route("/sms", methods=['GET', 'POST'])
-
 
 def incoming_sms():
     """Send a dynamic reply to an incoming text message"""
@@ -27,20 +14,17 @@ def incoming_sms():
 
     # Determine the right reply for this message
     if body == 'hello':
-        resp.message("Hi!")
+        resp.message(testing())
     elif body == 'bye':
         resp.message("Goodbye")
 
     return str(resp)
 
 
-all_data = sheet.get_all_records()
-print(all_data)
 
 
-
-
-
+def testing()
+    return "testing works"
 
 
 
