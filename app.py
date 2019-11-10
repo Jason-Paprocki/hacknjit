@@ -50,7 +50,8 @@ def incoming_sms():
 def findPhoneNumber():
     with file("mycsv.csv", "r") as r_csv:
         os.remove("mycsv.csv")
-        
+        with file("mycsv.csv", "w") as w_csv:
+            print("beep")
 
 if __name__ == "__main__":
     app.run(debug=True)
