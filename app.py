@@ -28,7 +28,7 @@ def incoming_sms():
 
     # Determine the right reply for this message
     if 'Start' in body:
-        startInMessage()
+        startInMessage(body)
     elif 'end' in body:
         resp.message(endInMessage())
 
@@ -37,8 +37,8 @@ def incoming_sms():
 #handling requests from the user
 rows = list(csv_f)
 
-def startInMessage():
-    return body
+def startInMessage(message):
+    return message
 
 def endInMessage():
     return "yert"
