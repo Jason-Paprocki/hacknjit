@@ -2,6 +2,11 @@ from flask import Flask, request, redirect
 from twilio.twiml.messaging_response import MessagingResponse
 import csv
 
+account_sid = 'AC1f8226cae497269ca7a9680131a2d2af'
+auth_token = '00b0091d18423f8ac406fd4c8d83e861'
+client = Client(account_sid, auth_token)
+
+
 app = Flask(__name__)
 @app.route("/sms", methods=['GET', 'POST'])
 
@@ -15,7 +20,7 @@ def incoming_sms():
 
     # Determine the right reply for this message
     if 'start' in body:
-        resp.message(startInMessage())
+        resp.message(client.messages.list())
     elif 'end' in body:
         resp.message(endInMessage())
 
