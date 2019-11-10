@@ -30,7 +30,7 @@ def incoming_sms():
 
     messages = client.messages.list()
 
-    findPhoneNumber()
+    findPhoneNumber(phone_number)
     '''for record in messages:
         if record.from_ == phone_number:
 
@@ -47,14 +47,18 @@ def incoming_sms():
 
     return str(resp)
 
-def findPhoneNumber():
+def findPhoneNumber(phone_number):
     with open('mycsv.csv', 'r') as readFile:
         reader = csv.reader(readFile)
         lines = list(reader)
         print(lines)
+        for index in range(len(lines)):
+            if str(phone_number) == lines[index][0]:
+                print("asdf")
+
     with open('mycsv.csv', 'w') as writeFile:
         writer = csv.writer(writeFile)
-        writer.writerows(lines)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
