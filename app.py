@@ -24,9 +24,9 @@ def incoming_sms():
     # Determine the right reply for this message
     if 'Start' in body or 'start' in body:
         writeToCsv()
-        resp.message(str(isInFile()))
+        resp.message(str(isInFile(phone_number)))
     elif 'end' in body or 'End' in body:
-        resp.message(endInMessage())
+        resp.message(str(writeToCsv(phone_number)))
 
 
 
@@ -34,19 +34,30 @@ def incoming_sms():
 
 #handling requests from the user
 
-def isInFile():
+def isInFile(phone_number):
     with open('mycsv.csv', 'r') as readFile:
         reader = csv.reader(readFile)
         lines = list(reader)
-        print(lines)
+        for index in range(len(lines)):
+            if str(phone_number) == str(line[index][0]):
+                print(lines)
+                return True
+        return False
     readFile.close()
-    return True
 
-def writeToCsv():
-    row[1] = ['cheanggeo  starting']
+#
+def writeToCsv(phone_number):
     with open('mycsv.csv', 'w') as writeFile:
         writer = csv.writer(writeFile)
+
+        for row in writeFile:
+                row[1] = ['cheanggeo  starting']
+
+
+
         writer.writerow(row)
+
+
     writeFile.close()
 
 
