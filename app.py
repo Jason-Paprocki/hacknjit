@@ -20,12 +20,8 @@ def incoming_sms():
     resp = MessagingResponse()
 
     # Determine the right reply for this message
-    if 'start' in body:
-        some_messages = client.messages.list(limit=10)
-        print('Here are the last 10 messages in your account:')
-        for m in some_messages:
-            print(m)
-        resp.message("we got it")
+    if 'Start' in body:
+        resp.message(request.form["To"])
     elif 'end' in body:
         resp.message(endInMessage())
 
