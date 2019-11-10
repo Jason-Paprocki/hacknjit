@@ -22,7 +22,7 @@ def incoming_sms():
 
     # Start our TwiML response
     resp = MessagingResponse()
-
+    print(beep1)
     phone_number = request.form["From"]
     phoneNumberHandler(phone_number)
 
@@ -34,7 +34,7 @@ def incoming_sms():
 
     return str(resp)
 
-
+    print(beep2)
 
 
 def startInMessage():
