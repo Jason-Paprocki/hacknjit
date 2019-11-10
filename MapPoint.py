@@ -44,7 +44,7 @@ class MapPoint:
     def eucl_midpoint_between(self, o):
         x = (self.lat + o.lat) / 2.0
         y = (self.lng + o.lng) / 2.0
-        distance = ((self.lat + o.lat)**2 + (self.lng + o.lng)**2)**.5
+        distance = ((self.lat - o.lat)**2 + (self.lng - o.lng)**2)**.5
         return MapPoint(x, y, radius=distance)
 
     #reverse geocode an address and get a pair of (lat, lng) coords
