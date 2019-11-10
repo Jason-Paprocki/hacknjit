@@ -11,7 +11,7 @@ client = Client(account_sid, auth_token)
 f = open('mycsv.csv')
 csv_f = csv.reader(f)
 rows = list(csv_f)
-phone_number = request.form["From"]
+
 
 app = Flask(__name__)
 @app.route("/sms", methods=['GET', 'POST'])
@@ -24,11 +24,11 @@ def incoming_sms():
     # Start our TwiML response
     resp = MessagingResponse()
 
-
+    phone_number = request.form["From"]
 
     # Determine the right reply for this message
     if 'Start' in body or 'start' in body:
-        resp.message(str(startInMessage(body)))
+        resp.message(str(startInMessage(body, phone_number)))
     elif 'end' in body or 'End' in body:
         resp.message(endInMessage())
 
@@ -40,7 +40,7 @@ def incoming_sms():
 
 
 #call this method for the starting location
-def startInMessage(body):
+def startInMessage(body, phone_number):
     for i in range(len(rows)):
         if (str(rows[i][0]) == str(phone_number)):
             rows[i][1] = body
