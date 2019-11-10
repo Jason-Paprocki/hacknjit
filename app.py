@@ -45,7 +45,7 @@ def endInMessage():
 def phoneNumberHandler(phone_number):
     rows = list(csv_f)
 
-    for i in range(rows):
+    for i in range(len(rows)):
         print(i)
         '''
         if (str(rows[i][0]) == str(phone_number)):
