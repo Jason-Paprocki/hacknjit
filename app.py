@@ -66,7 +66,7 @@ def proccessTask(phone_number, direction, messagebody):
                 # direction is go so its the first collumn
                 if (direction == "from"):
                     with open('mycsv.csv', 'w') as writeFile:
-                        lines[index] = [lines[index][0], str(messagebody), lines[index][1]]
+                        lines[index] = [lines[index][0], str(messagebody), lines[index][2]]
                         writer = csv.writer(writeFile)
                         writer.writerow(lines[index])
 
