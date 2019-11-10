@@ -1,4 +1,6 @@
 import googlemaps
+import json
+from pprint import pprint
 
 class MapPoint:
     #constructor for turn MapPoints
@@ -48,7 +50,8 @@ class MapPoint:
     #reverse geocode an address and get a pair of (lat, lng) coords
     def reverse_geocode(self):
         gmap = googlemaps.Client(key='AIzaSyB3O7rrXNzMCbD1dK3Kmme_yCx3PruCVwk')
-        return str(gmap.reverse_geocode((self.lat, self.lng)))
+        gc = googlemaps.geocoding.geocode(gmap, self.lat_str + ", "  + self.lng_str)
+        return gc[0]['formatted_address']
 
     #format (lat, lng) appropriately for urls
     def get_lat_lng_str(self):
