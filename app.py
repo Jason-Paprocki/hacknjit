@@ -30,7 +30,6 @@ def incoming_sms():
 
     messages = client.messages.list()
 
-    print(body)
     body_elements = str(body).split(' ')
 
 
@@ -58,7 +57,6 @@ def proccessTask(phone_number, direction, messagebody):
         reader = csv.reader(readFile)
         lines = list(reader)
         print(lines)
-
         #iterates through whole csv file
         for index in range(len(lines)):
 
