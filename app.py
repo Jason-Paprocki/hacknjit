@@ -3,9 +3,6 @@ from twilio.twiml.messaging_response import MessagingResponse
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
-app = Flask(__name__)
-
-@app.route("/sms", methods=['GET', 'POST'])
 
 scope = ['https://spreadsheets.google.com/feeds']
 creds = ServiceAccountCredentials.from_json_keyfile_name('twilio-d71c51008463.json', scope)
@@ -15,6 +12,9 @@ sheet = client.open('twilio').sheet1
 
 
 
+app = Flask(__name__)
+
+@app.route("/sms", methods=['GET', 'POST'])
 
 
 def incoming_sms():
