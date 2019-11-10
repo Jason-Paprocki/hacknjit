@@ -72,12 +72,9 @@ def proccessTask(phone_number, direction, messagebody):
                 # direction is end point so its the second collumn
                 else:
                     with open('mycsv.csv', 'w') as writeFile:
-                        print(lines)
-                        lines.remove(lines[index])
-                        print(lines)
-                        templine = [lines[index][0], lines[index][1], str(messagebody)]
+                        lines[index] = [lines[index][0], lines[index][1], str(messagebody)]
                         writer = csv.writer(writeFile)
-                        writer.writerow(templine)
+                        writer.writerow(lines[index])
 
             # phone number doesnt exist so it adds the phone number with the message data
             else:
