@@ -43,7 +43,7 @@ def isInFile():
     return True
 
 def writeToCsv():
-    row = ['123456789', 'starting', 'Ending']
+    row[1] = ['cheanggeo  starting']
     with open('mycsv.csv', 'w') as writeFile:
         writer = csv.writer(writeFile)
         writer.writerow(row)
