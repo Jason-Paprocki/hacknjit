@@ -28,7 +28,7 @@ def incoming_sms():
 
     # Determine the right reply for this message
     if 'Start' in body:
-        resp.message(honeNumberHandler(phone_number))
+        resp.message(phoneNumberHandler(phone_number))
     elif 'end' in body:
         resp.message(endInMessage())
 
