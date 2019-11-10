@@ -38,11 +38,11 @@ def incoming_sms():
 rows = list(csv_f)
 
 #call this method for the starting location
-def startInMessage(message):
+def startInMessage(body):
     return True
 
 #call this method for the end location
-def endInMessage(message):
+def endInMessage(body):
     return True
 
 #this will handle the phone number
@@ -50,9 +50,9 @@ def phoneNumberHandler(phone_number):
     for i in range(len(rows)):
         if (str(rows[i][0]) == str(phone_number)):
 
-            if (startInMessage(message)):
+            if (startInMessage()):
                 rows[i][1] = message
-            if endInMessage(message):
+            if endInMessage():
                 return
 
     return False
