@@ -22,7 +22,7 @@ def incoming_sms():
     """Send a dynamic reply to an incoming text message"""
     # Get the message the user sent our Twilio number
     body = request.values.get('Body', None)
-
+    direction = ""
     # Start our TwiML response
     resp = MessagingResponse()
 
@@ -30,7 +30,13 @@ def incoming_sms():
 
     messages = client.messages.list()
 
-    findPhoneNumber(phone_number)
+    """body_elements = body.split(' ')
+    if (body[0] == "go"):
+        direction = "go"
+        messagebody = body[1]
+        findPhoneNumber(phone_number, direction, messagebody)"""
+
+    findPhoneNumber(phone_number, body)
     '''for record in messages:
         if record.from_ == phone_number:
 
@@ -40,24 +46,48 @@ def incoming_sms():
         writer = csv.writer(open('mycsv.csv', 'wb'))
         writer.writerows(data)'''
 
+
+
+    #reply to message
     #resp.message()
-
-    #body_elements = body.split(' ')
-    # Determine the right reply for this message
-
     return str(resp)
 
-def findPhoneNumber(phone_number):
+def findPhoneNumber(phone_number, direction, messagebody):
+    #opens csv file for reading
     with open('mycsv.csv', 'r') as readFile:
         reader = csv.reader(readFile)
         lines = list(reader)
         print(lines)
-        for index in range(len(lines)):
-            if str(phone_number) == lines[index][0]:
-                print("asdf")
 
-    with open('mycsv.csv', 'w') as writeFile:
-        writer = csv.writer(writeFile)
+        #iterates through whole csv file
+        for index in range(len(lines)):
+            #found the phone number already
+            if str(phone_number) == lines[index][0]:
+                #direction is go so its the first collumn
+                if (direction == "go"):
+                    with open('mycsv.csv', 'w') as writeFile:
+                        row[index][1] = messagebody
+                        writer = csv.writer(row)
+                #direction is end point so its the second collumn
+                else:
+                    with open('mycsv.csv', 'w') as writeFile:
+                        row[index][2] = messagebody
+                        writer = csv.writer(row)
+            #phone number doesnt exist so it adds the phone number with the message data
+            else:
+                #direction is go so its the first collumn
+                if (direction == "go"):
+                    with open('mycsv.csv', 'a') as appendFile:
+                        row[len(lines)][1] = messagebody
+                        writer = csv.writer(row)
+                #direction is end point so its the second collumn
+                else:
+                    with open('mycsv.csv', 'w') as writeFile:
+                        row[len(lines)][2] = messagebody
+                        writer = csv.writer(row)
+
+
+
 
 
 if __name__ == "__main__":
