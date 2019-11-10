@@ -51,4 +51,4 @@ class MapPoint:
 
     #format (lat, lng) appropriately for urls
     def get_lat_lng_str(self):
-        return self.lat_str + "," + self.lng_str
+        return format(self.lat, '.15f') + "," + format(self.lng, '.15f')
