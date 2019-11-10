@@ -13,13 +13,20 @@ def incoming_sms():
     # Start our TwiML response
     resp = MessagingResponse()
 
-    # writing JSON object
-    with open('data.json', 'w') as f:
-        json.dump(resp, f)
+    parsed_json = json.loads(body)
+    json.dump(parsed_json, indent=4)
 
+    """
+    End goal JSON file:
+    {
+        "service": "gas"
+        "start":
+        "end":
+    }
+    """
 
     #reply for this message
-    resp.message("hello")
+    resp.message(body)
 
     return str(resp)
 
