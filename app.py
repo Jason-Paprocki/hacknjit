@@ -48,7 +48,7 @@ def incoming_sms():
     #reply to message
     #resp.message()
 
-    return str(resp.message(main(origin, destination)))
+    #return str(resp.message(main(origin, destination)))
 
 def proccessTask(phone_number, direction, messagebody):
     print(phone_number + " te diretion is: " + direction + " message: "+ messagebody)
@@ -71,7 +71,7 @@ def proccessTask(phone_number, direction, messagebody):
                         lines[index] = [lines[index][0], str(messagebody), lines[index][2]]
                         writer = csv.writer(writeFile)
                         writer.writerow(lines[index])
-
+                        return
                 # direction is end point so its the second collumn
                 else:
                     with open('mycsv.csv', 'w') as writeFile:
@@ -79,6 +79,7 @@ def proccessTask(phone_number, direction, messagebody):
                         lines[index] = [lines[index][0], lines[index][1], str(messagebody)]
                         writer = csv.writer(writeFile)
                         writer.writerow(lines[index])
+                        return
 
             # phone number doesnt exist so it adds the phone number with the message data
             else:
@@ -88,6 +89,7 @@ def proccessTask(phone_number, direction, messagebody):
                         writer = csv.writer(appendFile)
                         templine = [str(phone_number), '', str(messagebody)]
                         writer.writerow(templine)
+                        return
 
                 # direction is end point so its the second collumn
                 else:
@@ -95,6 +97,7 @@ def proccessTask(phone_number, direction, messagebody):
                         writer = csv.writer(appendFile)
                         templine = [str(phone_number), str(messagebody), '']
                         writer.writerow(templine)
+                        return
 
 
 
